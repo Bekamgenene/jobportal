@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                             http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!-- Welcome file: The first page to be shown when the application starts -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file> <!-- Adjust this to your homepage JSP -->
+    </welcome-file-list>
+
+    <!-- Servlet definitions -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.jobportal.servlet.LoginServlet</servlet-class> <!-- Replace with your actual servlet class -->
+        <load-on-startup>admin_dashboard.jsp</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.jobportal.servlet.RegisterServlet</servlet-class> <!-- Replace with your actual servlet class -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>JobServlet</servlet-name>
+        <servlet-class>com.jobportal.servlet.JobServlet</servlet-class> <!-- Replace with your actual servlet class -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <!-- Servlet mappings -->
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern> <!-- This will map to /login URL -->
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern> <!-- This will map to /register URL -->
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>JobServlet</servlet-name>
+        <url-pattern>/jobs</url-pattern> <!-- This will map to /jobs URL -->
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <url-pattern>/admin/login</url-pattern> <!-- This will map to /admin/login URL -->
+    </servlet-mapping>
+
+    <!-- Error page configurations (optional) -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error404.jsp</location> <!-- This will show an error page if the page is not found -->
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/error.jsp</location> <!-- This will show a general error page for exceptions -->
+    </error-page>
+
+</web-app>
