@@ -22,9 +22,3 @@ A web-based portal designed to connect job seekers with the latest job and inter
 - **Server**:
   - Apache Tomcat
 
-## Installation
-
-1. **Clone the Repository**:
-
-   ```bash
-   git clone https://github.com/your-username/job-portal-ethiopia.git
